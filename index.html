@@ -35,7 +35,6 @@
     overflow-x: hidden;
   }
 
-  /* ── Layout ── */
   .screen { display: none; min-height: 100vh; flex-direction: column; }
   .screen.active { display: flex; }
 
@@ -46,7 +45,6 @@
     padding-bottom: 80px;
   }
 
-  /* ── Bottom Nav ── */
   .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -71,12 +69,10 @@
   .nav-item.active { color: var(--blue); }
   .nav-icon { font-size: 22px; display: block; margin-bottom: 2px; }
 
-  /* ── Typography ── */
   h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
   h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
   .subtitle { color: var(--text2); font-size: 13px; margin-bottom: 28px; }
 
-  /* ── Logo ── */
   .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 44px; }
   .logo-box {
     width: 38px; height: 38px;
@@ -87,7 +83,6 @@
   }
   .logo-text { font-size: 20px; font-weight: 700; }
 
-  /* ── Inputs ── */
   .field { margin-bottom: 16px; }
   .field label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 6px; }
   .field input, .field textarea {
@@ -105,7 +100,6 @@
   .field input:focus, .field textarea:focus { border-color: var(--blue); }
   .field textarea { height: 80px; resize: none; }
 
-  /* ── Buttons ── */
   .btn {
     width: 100%;
     padding: 15px;
@@ -127,7 +121,6 @@
   .btn-danger { background: rgba(255,59,48,0.12); color: var(--error); border: none; }
   .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-  /* ── Cards ── */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -136,7 +129,6 @@
     margin-bottom: 10px;
   }
 
-  /* ── QR Field ── */
   .qr-field {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -156,17 +148,13 @@
   .qr-field-value { font-size: 14px; font-weight: 500; margin-top: 2px; }
   .qr-field-value.empty { color: var(--text2); font-weight: 400; }
 
-  /* ── Tags ── */
   .tag { display: inline-block; padding: 3px 8px; border-radius: 5px; font-size: 11px; font-weight: 700; }
   .tag-blue { background: var(--blue); color: #fff; }
   .tag-dark { background: var(--surface); color: var(--text); }
-  .tag-sync { background: rgba(0,200,83,0.15); color: var(--success); }
-  .tag-pending { background: rgba(255,204,0,0.15); color: var(--warning); }
+  .tag-local { background: rgba(0,200,83,0.15); color: var(--success); }
 
-  /* ── Divider ── */
   .divider { height: 1px; background: var(--border); margin: 10px 0; }
 
-  /* ── Toast ── */
   #toast {
     position: fixed;
     bottom: 90px;
@@ -193,7 +181,6 @@
   #toast.error { border-color: var(--error); color: var(--error); }
   #toast.warning { border-color: var(--warning); color: var(--warning); }
 
-  /* ── Modal ── */
   .modal-overlay {
     display: none;
     position: fixed;
@@ -217,7 +204,6 @@
   .modal-actions { display: flex; gap: 8px; margin-top: 8px; }
   .modal-actions .btn { flex: 1; margin: 0; }
 
-  /* ── QR Scanner Modal ── */
   #scanner-overlay {
     display: none;
     position: fixed;
@@ -331,7 +317,6 @@
     cursor: pointer;
   }
 
-  /* ── Stats ── */
   .stats { display: flex; gap: 8px; margin-bottom: 12px; }
   .stat {
     background: rgba(0,87,255,0.1);
@@ -341,9 +326,7 @@
     font-size: 12px;
     color: var(--blue);
   }
-  .stat.warn { background: rgba(255,204,0,0.1); border-color: rgba(255,204,0,0.25); color: var(--warning); }
 
-  /* ── Search ── */
   .search-wrap {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -363,7 +346,6 @@
     outline: none;
   }
 
-  /* ── Record card ── */
   .record-tags { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; }
   .record-qty { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
   .record-obs { font-size: 12px; color: var(--text2); margin-bottom: 4px; }
@@ -371,7 +353,6 @@
   .record-edited { font-size: 10px; color: var(--warning); margin-top: 3px; }
   .edit-btn { background: none; border: none; font-size: 16px; cursor: pointer; padding: 2px; }
 
-  /* ── Profile ── */
   .profile-card { display: flex; align-items: center; gap: 14px; }
   .avatar {
     width: 52px; height: 52px;
@@ -379,14 +360,6 @@
     border-radius: 13px;
     display: flex; align-items: center; justify-content: center;
     font-size: 22px; font-weight: 700; flex-shrink: 0;
-  }
-  .role-badge {
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 5px;
-    font-size: 11px;
-    font-weight: 700;
-    margin-top: 4px;
   }
   .user-row {
     display: flex;
@@ -404,49 +377,6 @@
     border-radius: 9px;
     display: flex; align-items: center; justify-content: center;
     font-size: 14px; font-weight: 700; flex-shrink: 0;
-  }
-  .status-btn {
-    padding: 4px 10px;
-    border-radius: 8px;
-    border: none;
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .status-active { background: rgba(0,200,83,0.15); color: var(--success); }
-  .status-inactive { background: rgba(255,59,48,0.15); color: var(--error); }
-
-  /* ── Role chips ── */
-  .role-chips { display: flex; gap: 6px; margin-bottom: 16px; }
-  .role-chip {
-    flex: 1;
-    padding: 8px 4px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: none;
-    color: var(--text2);
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: capitalize;
-    transition: all 0.2s;
-    text-align: center;
-  }
-  .role-chip.active { border-color: var(--blue); background: rgba(0,87,255,0.15); color: var(--blue); }
-
-  /* ── Sync button ── */
-  .sync-btn {
-    background: rgba(255,204,0,0.15);
-    border: none;
-    border-radius: 8px;
-    padding: 6px 10px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--warning);
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
   }
 
   .empty-state {
@@ -481,7 +411,6 @@
   .section-title { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
   .header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 
-  /* ── Modo Registro ── */
   .mode-select {
     width: 100%;
     background: var(--surface);
@@ -548,7 +477,6 @@
   }
   .sku-list-item:last-child { border-bottom: none; }
   .sku-list-sku { flex: 1; font-size: 13px; font-weight: 600; }
-  .sku-list-qty { font-size: 12px; color: var(--text2); }
   .sku-list-del { background: none; border: none; color: var(--error); font-size: 14px; cursor: pointer; padding: 2px; }
   .sku-list-empty { padding: 16px 14px; font-size: 13px; color: var(--text2); text-align: center; }
 </style>
@@ -578,7 +506,7 @@
   </div>
 </div>
 
-<!-- ── EDIT MODAL ── -->
+<!-- ── EDIT RECORD MODAL ── -->
 <div class="modal-overlay" id="edit-modal">
   <div class="modal">
     <div class="modal-title" id="edit-modal-title">Editar registro</div>
@@ -591,68 +519,60 @@
   </div>
 </div>
 
-<!-- ── CREATE USER MODAL ── -->
-<div class="modal-overlay" id="create-user-modal">
+<!-- ── PIN MODAL (login) ── -->
+<div class="modal-overlay" id="pin-modal">
   <div class="modal">
-    <div class="modal-title">Novo Usuário</div>
-    <div class="field"><label>Nome</label><input id="cu-name" placeholder="Nome completo"></div>
-    <div class="field"><label>Usuário</label><input id="cu-user" placeholder="username" autocomplete="off"></div>
-    <div class="field"><label>Senha</label><input type="password" id="cu-pass" placeholder="Mínimo 6 caracteres"></div>
-    <label style="font-size:12px;color:var(--text2);display:block;margin-bottom:6px">Função</label>
-    <div class="role-chips">
-      <button class="role-chip active" data-role="colaborador" onclick="selectRole(this)">colaborador</button>
-      <button class="role-chip" data-role="supervisor" onclick="selectRole(this)">supervisor</button>
-      <button class="role-chip" data-role="admin" onclick="selectRole(this)">admin</button>
-    </div>
+    <div class="modal-title" id="pin-modal-title">Digite seu PIN</div>
+    <div class="field"><input type="password" id="pin-input" inputmode="numeric" maxlength="4" placeholder="••••" style="text-align:center;font-size:24px;letter-spacing:8px"></div>
     <div class="modal-actions">
-      <button class="btn btn-outline" onclick="closeCreateUser()">Cancelar</button>
-      <button class="btn btn-primary" onclick="createUser()">Criar</button>
+      <button class="btn btn-outline" onclick="closePinModal()">Cancelar</button>
+      <button class="btn btn-primary" onclick="confirmPin()">Entrar</button>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
-<!-- SCREEN: LOADING -->
-<!-- ══════════════════════════════════════════ -->
-<div class="screen active" id="screen-loading">
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;gap:16px">
-    <div class="logo-box" style="width:52px;height:52px;font-size:26px">K</div>
-    <div class="spinner" style="border-top-color:var(--blue)"></div>
-    <p style="color:var(--text2);font-size:13px">Conectando...</p>
+<!-- ── CREATE PROFILE MODAL (dentro do app, sem deslogar) ── -->
+<div class="modal-overlay" id="create-profile-modal">
+  <div class="modal">
+    <div class="modal-title">Novo perfil neste dispositivo</div>
+    <div class="field"><label>Nome</label><input id="cp-name" placeholder="Nome completo"></div>
+    <div class="field"><label>PIN (4 dígitos)</label><input type="password" id="cp-pin" inputmode="numeric" maxlength="4" placeholder="••••"></div>
+    <div class="field"><label>Confirmar PIN</label><input type="password" id="cp-pin2" inputmode="numeric" maxlength="4" placeholder="••••"></div>
+    <div class="modal-actions">
+      <button class="btn btn-outline" onclick="closeCreateProfile()">Cancelar</button>
+      <button class="btn btn-primary" onclick="createProfileFromModal()">Criar</button>
+    </div>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════ -->
 <!-- SCREEN: LOGIN -->
 <!-- ══════════════════════════════════════════ -->
-<div class="screen" id="screen-login">
+<div class="screen active" id="screen-login">
   <div class="scroll-content">
     <div class="logo">
       <div class="logo-box">K</div>
       <div class="logo-text">kavak</div>
     </div>
     <h1>Bem-vindo</h1>
-    <p class="subtitle">Acesse sua conta para continuar</p>
-    <div class="field"><label>Usuário</label><input id="login-user" placeholder="Digite seu usuário" autocomplete="username"></div>
-    <div class="field"><label>Senha</label><input id="login-pass" type="password" placeholder="Digite sua senha" autocomplete="current-password"></div>
-    <button class="btn btn-primary" onclick="doLogin()">Entrar</button>
-    <button class="btn btn-outline" onclick="showScreen('register')">Criar conta</button>
+    <p class="subtitle">Escolha seu perfil neste dispositivo</p>
+    <div id="login-profile-list"></div>
+    <button class="btn btn-outline" onclick="showScreen('register')">+ Criar perfil</button>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════ -->
-<!-- SCREEN: REGISTER -->
+<!-- SCREEN: REGISTER (primeiro perfil do dispositivo, ou novo a partir do login) -->
 <!-- ══════════════════════════════════════════ -->
 <div class="screen" id="screen-register">
   <div class="scroll-content">
-    <button class="back-btn" onclick="showScreen('login')">← Voltar</button>
-    <h1>Criar conta</h1>
-    <p class="subtitle">Preencha os dados abaixo</p>
+    <button class="back-btn" onclick="showScreen('login'); renderProfileList();">← Voltar</button>
+    <h1>Criar perfil</h1>
+    <p class="subtitle">Fica salvo só neste dispositivo</p>
     <div class="field"><label>Nome completo</label><input id="reg-name" placeholder="Seu nome"></div>
-    <div class="field"><label>Usuário</label><input id="reg-user" placeholder="Escolha um usuário" autocomplete="off"></div>
-    <div class="field"><label>Senha</label><input id="reg-pass" type="password" placeholder="Mínimo 6 caracteres"></div>
-    <div class="field"><label>Confirmar senha</label><input id="reg-pass2" type="password" placeholder="Repita a senha"></div>
-    <button class="btn btn-primary" onclick="doRegister()">Criar conta</button>
+    <div class="field"><label>PIN (4 dígitos)</label><input type="password" id="reg-pin" inputmode="numeric" maxlength="4" placeholder="••••"></div>
+    <div class="field"><label>Confirmar PIN</label><input type="password" id="reg-pin2" inputmode="numeric" maxlength="4" placeholder="••••"></div>
+    <button class="btn btn-primary" onclick="doRegister()">Criar perfil</button>
   </div>
 </div>
 
@@ -661,7 +581,6 @@
 <!-- ══════════════════════════════════════════ -->
 <div class="screen" id="screen-form">
   <div class="scroll-content">
-    <!-- Header com título, dropdown e cancelar -->
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
       <h2 style="margin-bottom:0">Novo Inventário</h2>
       <button id="cancel-rua-btn" onclick="confirmarCancelar()" style="display:none;background:rgba(255,59,48,0.12);border:none;border-radius:8px;padding:6px 12px;color:var(--error);font-size:12px;font-weight:600;cursor:pointer">✕ Cancelar Rua</button>
@@ -696,7 +615,6 @@
 
     <!-- MODO POR RUA -->
     <div id="mode-porrua" style="display:none">
-      <!-- Rua não selecionada -->
       <div id="pr-rua-picker">
         <div class="qr-field" onclick="openScanner('Rua-PR')">
           <span class="qr-field-icon">🏭</span>
@@ -707,7 +625,6 @@
           <span>⬜</span>
         </div>
       </div>
-      <!-- Rua selecionada e travada -->
       <div id="pr-rua-locked" style="display:none">
         <div class="rua-locked">
           <div>
@@ -716,7 +633,6 @@
           </div>
           <button class="rua-desbtn" onclick="desabilitarRua()">Desab.</button>
         </div>
-        <!-- SKU picker -->
         <div class="qr-field" onclick="openScanner('SKU-PR')">
           <span class="qr-field-icon">📦</span>
           <div class="qr-field-info">
@@ -735,7 +651,6 @@
         </div>
         <div class="field"><label>Observações (opcional)</label><textarea id="pr-obs" placeholder="Ex: peças danificadas..."></textarea></div>
         <button class="btn btn-outline" onclick="addSkuToList()" style="margin-bottom:14px">+ Adicionar SKU</button>
-        <!-- Lista de SKUs adicionados -->
         <div class="sku-list" id="pr-sku-list">
           <div class="sku-list-header">SKUs registrados nesta rua</div>
           <div id="pr-sku-items"><div class="sku-list-empty">Nenhum SKU adicionado</div></div>
@@ -762,10 +677,7 @@
   <div class="scroll-content">
     <div class="header-row">
       <h2>Histórico</h2>
-      <div style="display:flex;gap:8px;align-items:center">
-        <button class="sync-btn" id="sync-btn" onclick="syncPending()" style="display:none">☁️ <span id="sync-count">0</span></button>
-        <button onclick="loadRecords()" style="background:none;border:none;color:var(--text2);font-size:18px;cursor:pointer">↻</button>
-      </div>
+      <button onclick="loadRecords()" style="background:none;border:none;color:var(--text2);font-size:18px;cursor:pointer">↻</button>
     </div>
 
     <div class="search-wrap">
@@ -794,27 +706,22 @@
         <div class="avatar" id="profile-avatar">K</div>
         <div>
           <div style="font-size:16px;font-weight:600" id="profile-name"></div>
-          <div style="font-size:13px;color:var(--text2)" id="profile-username"></div>
-          <div class="role-badge" id="profile-role"></div>
+          <div style="font-size:13px;color:var(--text2)" id="profile-stat"></div>
         </div>
       </div>
     </div>
 
-    <div id="admin-panel" style="display:none">
-      <div class="header-row">
-        <div class="section-title">Usuários</div>
-        <button onclick="loadUsers()" style="background:none;border:none;color:var(--text2);cursor:pointer">↻</button>
-      </div>
-      <div id="users-list"></div>
-      <button class="btn btn-outline" onclick="openCreateUser()" style="margin-top:4px">+ Novo usuário</button>
+    <div class="header-row">
+      <div class="section-title">Perfis neste dispositivo</div>
     </div>
+    <div id="profiles-manage-list"></div>
+    <button class="btn btn-outline" onclick="openCreateProfile()" style="margin-top:4px;margin-bottom:20px">+ Adicionar perfil</button>
 
-    <div id="export-panel" style="display:none;margin-top:16px">
-      <div class="section-title">Exportar dados</div>
-      <button class="btn btn-outline" onclick="exportCSV()" id="export-btn">⬇️ Exportar CSV</button>
-    </div>
+    <div class="section-title">Dados locais</div>
+    <button class="btn btn-outline" onclick="exportCSV()" id="export-btn">⬇️ Exportar CSV</button>
+    <p style="font-size:11px;color:var(--text2);margin:-4px 0 16px 2px">Fica salvo só neste aparelho. Exporte com frequência.</p>
 
-    <button class="btn btn-danger" onclick="doLogout()" style="margin-top:28px">Sair da conta</button>
+    <button class="btn btn-danger" onclick="doLogout()">Trocar usuário</button>
   </div>
   <nav class="bottom-nav">
     <div class="nav-item" onclick="switchTab('historico')"><span class="nav-icon">🕐</span>Histórico</div>
@@ -825,30 +732,16 @@
 
 <script>
 // ══════════════════════════════════════════════════════════════
-// SUPABASE CONFIG
+// ARMAZENAMENTO 100% LOCAL (sem backend / sem internet)
 // ══════════════════════════════════════════════════════════════
-const SB_URL = 'https://qctppxvcgqxztluxmkbb.supabase.co';
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjdHBweHZjZ3F4enRsdXhta2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NzE5NDAsImV4cCI6MjA4OTM0Nzk0MH0.eEoDncsCCCawpo80MNziyfGvXvOHy7jIeMxlN2LLIZQ';
+const getProfiles  = () => JSON.parse(localStorage.getItem('kv_profiles') || '[]');
+const saveProfiles = (p) => localStorage.setItem('kv_profiles', JSON.stringify(p));
+const getRecords   = () => JSON.parse(localStorage.getItem('kv_records') || '[]');
+const saveRecords  = (r) => localStorage.setItem('kv_records', JSON.stringify(r));
+const getSession   = () => JSON.parse(localStorage.getItem('kv_session') || 'null');
+const saveSession  = (s) => localStorage.setItem('kv_session', JSON.stringify(s));
+const clearSession = () => localStorage.removeItem('kv_session');
 
-async function sb(path, options = {}) {
-  const res = await fetch(`${SB_URL}/rest/v1/${path}`, {
-    ...options,
-    headers: {
-      'apikey': SB_KEY,
-      'Authorization': `Bearer ${SB_KEY}`,
-      'Content-Type': 'application/json',
-      'Prefer': options.prefer || 'return=representation',
-      ...(options.headers || {})
-    }
-  });
-  const text = await res.text();
-  if (!res.ok) throw new Error(text);
-  return text ? JSON.parse(text) : null;
-}
-
-// ══════════════════════════════════════════════════════════════
-// HELPERS
-// ══════════════════════════════════════════════════════════════
 const hash = (str) => {
   let h = 0;
   for (let i = 0; i < str.length; i++) h = Math.imul(31, h) + str.charCodeAt(i) | 0;
@@ -860,10 +753,6 @@ const uuid = () => 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => 
   return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
 });
 
-const getSession = () => JSON.parse(localStorage.getItem('kv_session') || 'null');
-const saveSession = (s) => localStorage.setItem('kv_session', JSON.stringify(s));
-const clearSession = () => localStorage.removeItem('kv_session');
-
 // ══════════════════════════════════════════════════════════════
 // ESTADO
 // ══════════════════════════════════════════════════════════════
@@ -872,17 +761,16 @@ let scannerStream = null;
 let scannerInterval = null;
 let allRecords = [];
 let editingRecord = null;
-let createUserRole = 'colaborador';
 let formRua = null;
 let formSku = null;
 let scanType = null;
+let pinTargetProfile = null;
 
-// Modo por rua
-let modoAtual = 'individual'; // 'individual' | 'porrua'
-let prRua = null;       // rua travada no modo por rua
-let prSku = null;       // sku atual sendo adicionado
-let prSkuList = [];     // lista de {sku, quantidade, observacoes}
-let prQty = 1;          // quantidade atual no modo por rua
+let modoAtual = 'individual';
+let prRua = null;
+let prSku = null;
+let prSkuList = [];
+let prQty = 1;
 
 function changePrQty(d) {
   prQty = Math.max(1, prQty + d);
@@ -894,27 +782,23 @@ function switchMode(val) {
   document.getElementById('mode-individual').style.display = val === 'individual' ? 'block' : 'none';
   document.getElementById('mode-porrua').style.display = val === 'porrua' ? 'block' : 'none';
   document.getElementById('cancel-rua-btn').style.display = 'none';
-  // Reset estado por rua
   prRua = null; prSku = null; prSkuList = []; prQty = 1;
-  if(document.getElementById('pr-qty-display')) document.getElementById('pr-qty-display').textContent = '1';
+  if (document.getElementById('pr-qty-display')) document.getElementById('pr-qty-display').textContent = '1';
   document.getElementById('pr-rua-picker').style.display = 'block';
   document.getElementById('pr-rua-locked').style.display = 'none';
   renderSkuList();
 }
 
 function desabilitarRua() {
-  // Só limpa a rua — mantém SKUs, qtd e obs
   prRua = null;
   document.getElementById('pr-rua-picker').style.display = 'block';
   document.getElementById('pr-rua-locked').style.display = 'none';
   document.getElementById('cancel-rua-btn').style.display = 'none';
-  // Mantém a lista de SKUs visível abaixo do picker
   renderSkuList();
   toast('Rua liberada. SKUs mantidos.', 'warning');
 }
 
 function confirmarCancelar() {
-  // Mostra mini confirmação no toast
   const el = document.getElementById('toast');
   el.innerHTML = 'Apagar tudo? <button onclick="cancelarRua()" style="margin-left:8px;background:var(--error);border:none;border-radius:5px;padding:2px 8px;color:#fff;font-size:11px;font-weight:700;cursor:pointer">Sim</button> <button onclick="document.getElementById(\'toast\').className=\'\';" style="margin-left:4px;background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:2px 8px;color:var(--text);font-size:11px;cursor:pointer">Não</button>';
   el.className = 'show warning';
@@ -923,13 +807,10 @@ function confirmarCancelar() {
 }
 
 function cancelarRua() {
-  // Apaga tudo — rua + todos os SKUs
   prRua = null; prSku = null; prSkuList = [];
   document.getElementById('pr-rua-picker').style.display = 'block';
   document.getElementById('pr-rua-locked').style.display = 'none';
   document.getElementById('cancel-rua-btn').style.display = 'none';
-  // Limpa campos
-  document.getElementById('pr-qty').value = '';
   document.getElementById('pr-obs').value = '';
   document.getElementById('pr-sku-val').textContent = 'Toque para ler QR Code do SKU';
   document.getElementById('pr-sku-val').className = 'qr-field-value empty';
@@ -987,14 +868,11 @@ function renderSkuList() {
   `).join('');
 }
 
-async function finalizarRua() {
+function finalizarRua() {
   if (!prRua || !prSkuList.length) return toast('Adicione ao menos um SKU', 'error');
-  const btn = document.getElementById('pr-finalizar-btn');
-  btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div>';
-  let erros = 0;
-  for (const item of prSkuList) {
-    const record = {
+  const records = getRecords();
+  prSkuList.forEach(item => {
+    records.unshift({
       id: uuid(),
       user_id: currentUser.id,
       user_name: currentUser.name,
@@ -1003,19 +881,10 @@ async function finalizarRua() {
       quantidade: item.quantidade,
       observacoes: item.observacoes,
       created_at: new Date().toISOString()
-    };
-    try {
-      await sb('inventory', { method: 'POST', prefer: 'return=minimal', body: JSON.stringify(record) });
-    } catch(e) { erros++; }
-  }
-  btn.disabled = false;
-  btn.textContent = '✓ Finalizar Rua';
-  if (erros === 0) {
-    toast(`✓ ${prSkuList.length} SKUs registrados na ${prRua}!`, 'success');
-  } else {
-    toast(`⚠️ ${erros} erros ao salvar`, 'warning');
-  }
-  // Reset para próxima rua
+    });
+  });
+  saveRecords(records);
+  toast(`✓ ${prSkuList.length} SKUs registrados na ${prRua}!`, 'success');
   prRua = null; prSku = null; prSkuList = [];
   document.getElementById('pr-rua-picker').style.display = 'block';
   document.getElementById('pr-rua-locked').style.display = 'none';
@@ -1026,44 +895,16 @@ async function finalizarRua() {
 // ══════════════════════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════════════════════
-async function init() {
-  // Mostra loading enquanto conecta
-  showScreen('loading');
-
-  try {
-    const existing = await sb('users?username=eq.admin&select=id');
-    if (!existing || existing.length === 0) {
-      await sb('users', {
-        method: 'POST',
-        prefer: 'return=minimal',
-        body: JSON.stringify({ id: 'admin-001', name: 'Administrador', username: 'admin', hash: hash('admin123'), role: 'admin', active: true })
-      });
-    }
-  } catch(e) { console.log('Init error:', e); }
-
-  // Tenta sessão salva primeiro
+function init() {
   const session = getSession();
   if (session) {
     currentUser = session;
     showMainApp();
     return;
   }
-
-  // Auto-login como admin — sem tela de login
-  try {
-    const users = await sb('users?username=eq.admin&active=eq.true&select=*');
-    if (users && users.length > 0) {
-      currentUser = users[0];
-      saveSession(currentUser);
-      showMainApp();
-      return;
-    }
-  } catch(e) {}
-
-  // Fallback: mostra login se falhar
   showScreen('login');
+  renderProfileList();
 }
-
 init();
 
 // ══════════════════════════════════════════════════════════════
@@ -1100,60 +941,131 @@ function switchTab(tab) {
 }
 
 // ══════════════════════════════════════════════════════════════
-// AUTH
+// PERFIS (nome + PIN, tudo local)
 // ══════════════════════════════════════════════════════════════
-async function doLogin() {
-  const username = document.getElementById('login-user').value.trim();
-  const password = document.getElementById('login-pass').value;
-  if (!username || !password) return toast('Preencha todos os campos', 'error');
-  try {
-    const users = await sb(`users?username=eq.${encodeURIComponent(username.toLowerCase())}&hash=eq.${hash(password)}&active=eq.true&select=*`);
-    if (!users || users.length === 0) return toast('Usuário ou senha incorretos', 'error');
-    currentUser = users[0];
-    saveSession(currentUser);
-    document.getElementById('login-user').value = '';
-    document.getElementById('login-pass').value = '';
-    showMainApp();
-  } catch(e) { toast('Erro ao conectar. Tente novamente.', 'error'); }
+function renderProfileList() {
+  const profiles = getProfiles();
+  const list = document.getElementById('login-profile-list');
+  if (!profiles.length) {
+    list.innerHTML = '<div class="empty-state"><div class="empty-icon">👤</div>Nenhum perfil cadastrado ainda.</div>';
+    return;
+  }
+  list.innerHTML = profiles.map(p => `
+    <div class="qr-field" onclick="openPinModal('${p.id}')">
+      <span class="qr-field-icon">👤</span>
+      <div class="qr-field-info">
+        <div class="qr-field-label">Perfil</div>
+        <div class="qr-field-value">${p.name}</div>
+      </div>
+      <span>›</span>
+    </div>
+  `).join('');
 }
 
-async function doRegister() {
+function openPinModal(id) {
+  pinTargetProfile = getProfiles().find(p => p.id === id);
+  if (!pinTargetProfile) return;
+  document.getElementById('pin-modal-title').textContent = `Entrar como ${pinTargetProfile.name}`;
+  document.getElementById('pin-input').value = '';
+  document.getElementById('pin-modal').classList.add('active');
+  setTimeout(() => document.getElementById('pin-input').focus(), 150);
+}
+
+function closePinModal() {
+  document.getElementById('pin-modal').classList.remove('active');
+  pinTargetProfile = null;
+}
+
+function confirmPin() {
+  if (!pinTargetProfile) return;
+  const pin = document.getElementById('pin-input').value.trim();
+  if (hash(pin) !== pinTargetProfile.pinHash) return toast('PIN incorreto', 'error');
+  currentUser = { id: pinTargetProfile.id, name: pinTargetProfile.name };
+  saveSession(currentUser);
+  closePinModal();
+  showMainApp();
+}
+
+function doRegister() {
   const name = document.getElementById('reg-name').value.trim();
-  const username = document.getElementById('reg-user').value.trim();
-  const pass = document.getElementById('reg-pass').value;
-  const pass2 = document.getElementById('reg-pass2').value;
-  if (!name || !username || !pass) return toast('Preencha todos os campos', 'error');
-  if (username.length < 3) return toast('Usuário deve ter pelo menos 3 caracteres', 'error');
-  if (pass.length < 6) return toast('Senha deve ter pelo menos 6 caracteres', 'error');
-  if (pass !== pass2) return toast('As senhas não coincidem', 'error');
-  try {
-    const existing = await sb(`users?username=eq.${encodeURIComponent(username.toLowerCase())}&select=id`);
-    if (existing && existing.length > 0) return toast('Usuário já existe', 'error');
-    await sb('users', {
-      method: 'POST',
-      prefer: 'return=minimal',
-      body: JSON.stringify({ id: uuid(), name, username: username.toLowerCase(), hash: hash(pass), role: 'colaborador', active: true })
-    });
-    toast('Conta criada! Faça login.', 'success');
-    document.getElementById('reg-name').value = '';
-    document.getElementById('reg-user').value = '';
-    document.getElementById('reg-pass').value = '';
-    document.getElementById('reg-pass2').value = '';
-    setTimeout(() => showScreen('login'), 1000);
-  } catch(e) { toast('Erro ao criar conta.', 'error'); }
+  const pin = document.getElementById('reg-pin').value.trim();
+  const pin2 = document.getElementById('reg-pin2').value.trim();
+  if (!name) return toast('Informe seu nome', 'error');
+  if (!/^\d{4}$/.test(pin)) return toast('PIN deve ter 4 dígitos', 'error');
+  if (pin !== pin2) return toast('Os PINs não coincidem', 'error');
+  const profiles = getProfiles();
+  if (profiles.some(p => p.name.toLowerCase() === name.toLowerCase())) return toast('Já existe um perfil com esse nome', 'error');
+  const profile = { id: uuid(), name, pinHash: hash(pin) };
+  profiles.push(profile);
+  saveProfiles(profiles);
+  currentUser = { id: profile.id, name: profile.name };
+  saveSession(currentUser);
+  document.getElementById('reg-name').value = '';
+  document.getElementById('reg-pin').value = '';
+  document.getElementById('reg-pin2').value = '';
+  toast('Perfil criado!', 'success');
+  showMainApp();
 }
 
 function doLogout() {
-  if (!confirm('Deseja sair da conta?')) return;
+  if (!confirm('Deseja trocar de usuário?')) return;
   currentUser = null;
   clearSession();
   showScreen('login');
+  renderProfileList();
+}
+
+function openCreateProfile() {
+  document.getElementById('cp-name').value = '';
+  document.getElementById('cp-pin').value = '';
+  document.getElementById('cp-pin2').value = '';
+  document.getElementById('create-profile-modal').classList.add('active');
+}
+
+function closeCreateProfile() {
+  document.getElementById('create-profile-modal').classList.remove('active');
+}
+
+function createProfileFromModal() {
+  const name = document.getElementById('cp-name').value.trim();
+  const pin = document.getElementById('cp-pin').value.trim();
+  const pin2 = document.getElementById('cp-pin2').value.trim();
+  if (!name) return toast('Informe o nome', 'error');
+  if (!/^\d{4}$/.test(pin)) return toast('PIN deve ter 4 dígitos', 'error');
+  if (pin !== pin2) return toast('Os PINs não coincidem', 'error');
+  const profiles = getProfiles();
+  if (profiles.some(p => p.name.toLowerCase() === name.toLowerCase())) return toast('Já existe um perfil com esse nome', 'error');
+  profiles.push({ id: uuid(), name, pinHash: hash(pin) });
+  saveProfiles(profiles);
+  closeCreateProfile();
+  renderProfilesManage();
+  toast('Perfil criado!', 'success');
+}
+
+function renderProfilesManage() {
+  const profiles = getProfiles();
+  document.getElementById('profiles-manage-list').innerHTML = profiles.map(p => `
+    <div class="user-row">
+      <div class="user-mini-avatar">${p.name[0].toUpperCase()}</div>
+      <div style="flex:1"><div style="font-size:13px;font-weight:500">${p.name}</div></div>
+      ${p.id !== currentUser.id
+        ? `<button onclick="deleteProfile('${p.id}','${p.name.replace(/'/g,"\\'")}')" style="background:rgba(255,59,48,0.12);border:none;border-radius:8px;padding:4px 8px;color:var(--error);cursor:pointer;font-size:14px">🗑️</button>`
+        : '<span style="font-size:11px;color:var(--text2)">você</span>'}
+    </div>
+  `).join('');
+}
+
+function deleteProfile(id, name) {
+  if (!confirm(`Apagar o perfil "${name}"? Os registros que ele já fez continuam no histórico.`)) return;
+  saveProfiles(getProfiles().filter(p => p.id !== id));
+  renderProfilesManage();
+  toast('Perfil apagado', 'success');
 }
 
 // ══════════════════════════════════════════════════════════════
 // FORMULÁRIO
 // ══════════════════════════════════════════════════════════════
-async function submitForm() {
+function submitForm() {
   if (!formRua) return toast('Leia o QR Code da Rua', 'error');
   if (!formSku) return toast('Leia o QR Code do SKU', 'error');
   if (!validateRua(formRua)) return toast(`Rua inválida: ${formRua}`, 'error');
@@ -1161,10 +1073,6 @@ async function submitForm() {
   const qty = parseInt(document.getElementById('form-qty').value);
   if (isNaN(qty)) return toast('Informe a quantidade', 'error');
   const obs = document.getElementById('form-obs').value.trim();
-
-  const btn = document.getElementById('form-btn');
-  btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div>';
 
   const record = {
     id: uuid(),
@@ -1177,15 +1085,11 @@ async function submitForm() {
     created_at: new Date().toISOString()
   };
 
-  try {
-    await sb('inventory', { method: 'POST', prefer: 'return=minimal', body: JSON.stringify(record) });
-    toast('✓ Registrado!', 'success');
-  } catch(e) {
-    toast('Erro ao salvar. Tente novamente.', 'error');
-  }
+  const records = getRecords();
+  records.unshift(record);
+  saveRecords(records);
+  toast('✓ Registrado!', 'success');
 
-  btn.disabled = false;
-  btn.textContent = '✓ Registrar';
   formRua = null; formSku = null;
   setQrField('rua', null);
   setQrField('sku', null);
@@ -1213,18 +1117,9 @@ function setQrField(type, value) {
 // ══════════════════════════════════════════════════════════════
 // HISTÓRICO
 // ══════════════════════════════════════════════════════════════
-async function loadRecords() {
-  document.getElementById('records-list').innerHTML = '<div class="empty-state"><div class="empty-icon">⏳</div>Carregando...</div>';
-  try {
-    const isSup = currentUser.role === 'supervisor' || currentUser.role === 'admin';
-    const filter = isSup ? '' : `user_id=eq.${currentUser.id}&`;
-    const records = await sb(`inventory?${filter}order=created_at.desc&select=*`);
-    allRecords = records || [];
-    document.getElementById('sync-btn').style.display = 'none';
-    renderRecords(allRecords);
-  } catch(e) {
-    document.getElementById('records-list').innerHTML = '<div class="empty-state"><div class="empty-icon">❌</div>Erro ao carregar registros</div>';
-  }
+function loadRecords() {
+  allRecords = getRecords();
+  renderRecords(allRecords);
 }
 
 function filterRecords() {
@@ -1245,37 +1140,31 @@ function renderRecords(records) {
     list.innerHTML = '<div class="empty-state"><div class="empty-icon">📦</div>Nenhum registro encontrado</div>';
     return;
   }
-  const isSupOrAdmin = currentUser.role === 'supervisor' || currentUser.role === 'admin';
-  list.innerHTML = records.map(r => {
-    const canEdit = isSupOrAdmin || r.user_id === currentUser.id;
-    const canDelete = isSupOrAdmin;
-    return `
+  list.innerHTML = records.map(r => `
     <div class="card">
       <div class="record-tags">
         <span class="tag tag-blue">${r.rua}</span>
         <span class="tag tag-dark">${r.sku}</span>
-        <span class="tag tag-sync" style="margin-left:auto">✓ Sync</span>
+        <span class="tag tag-local" style="margin-left:auto">💾 Local</span>
       </div>
       <div style="display:flex;align-items:center;gap:4px">
         <div class="record-qty" style="flex:1">📦 ${r.quantidade} unid.</div>
-        ${canEdit ? `<button class="edit-btn" onclick="openEditModal('${r.id}','${r.sku}',${r.quantidade},'${(r.observacoes||'').replace(/'/g,"\\'")}')">✏️</button>` : ''}
-        ${canDelete ? `<button class="edit-btn" onclick="deleteRecord('${r.id}')" style="color:var(--error)">🗑️</button>` : ''}
+        <button class="edit-btn" onclick="openEditModal('${r.id}','${r.sku}',${r.quantidade},'${(r.observacoes||'').replace(/'/g,"\\'")}')">✏️</button>
+        <button class="edit-btn" onclick="deleteRecord('${r.id}')" style="color:var(--error)">🗑️</button>
       </div>
       ${r.observacoes ? `<div class="record-obs">${r.observacoes}</div>` : ''}
       <div class="divider"></div>
       <div class="record-meta"><span>👤 ${r.user_name}</span><span>${fmtDate(r.created_at)}</span></div>
       ${r.edited_by ? `<div class="record-edited">✏️ Editado por ${r.edited_by}</div>` : ''}
     </div>
-  `}).join('');
+  `).join('');
 }
 
-async function deleteRecord(id) {
+function deleteRecord(id) {
   if (!confirm('Apagar este registro permanentemente?')) return;
-  try {
-    await sb(`inventory?id=eq.${id}`, { method: 'DELETE', prefer: 'return=minimal' });
-    toast('Registro apagado!', 'success');
-    loadRecords();
-  } catch(e) { toast('Erro ao apagar registro.', 'error'); }
+  saveRecords(getRecords().filter(r => r.id !== id));
+  toast('Registro apagado!', 'success');
+  loadRecords();
 }
 
 function fmtDate(iso) {
@@ -1299,153 +1188,61 @@ function closeEditModal() {
   editingRecord = null;
 }
 
-async function saveEdit() {
+function saveEdit() {
   if (!editingRecord) return;
-  try {
-    await sb(`inventory?id=eq.${editingRecord.id}`, {
-      method: 'PATCH',
-      prefer: 'return=minimal',
-      body: JSON.stringify({
-        quantidade: parseInt(document.getElementById('edit-qty').value) || editingRecord.quantidade,
-        observacoes: document.getElementById('edit-obs').value.trim() || null,
-        edited_by: currentUser.name,
-        edited_at: new Date().toISOString()
-      })
-    });
-    closeEditModal();
-    loadRecords();
-    toast('Registro atualizado!', 'success');
-  } catch(e) { toast('Erro ao atualizar.', 'error'); }
+  const records = getRecords();
+  const idx = records.findIndex(r => r.id === editingRecord.id);
+  if (idx === -1) return closeEditModal();
+  records[idx].quantidade = parseInt(document.getElementById('edit-qty').value) || editingRecord.quantidade;
+  records[idx].observacoes = document.getElementById('edit-obs').value.trim() || null;
+  records[idx].edited_by = currentUser.name;
+  records[idx].edited_at = new Date().toISOString();
+  saveRecords(records);
+  closeEditModal();
+  loadRecords();
+  toast('Registro atualizado!', 'success');
 }
 
 // ══════════════════════════════════════════════════════════════
-// PERFIL / ADMIN
+// PERFIL
 // ══════════════════════════════════════════════════════════════
 function loadProfile() {
   document.getElementById('profile-name').textContent = currentUser.name;
-  document.getElementById('profile-username').textContent = '@' + currentUser.username;
   document.getElementById('profile-avatar').textContent = currentUser.name[0].toUpperCase();
-  const roleEl = document.getElementById('profile-role');
-  const colors = { admin: '#FF9500', supervisor: '#0057FF', colaborador: '#9E9E9E' };
-  const color = colors[currentUser.role] || '#9E9E9E';
-  roleEl.style.background = color + '22';
-  roleEl.style.color = color;
-  roleEl.style.border = `1px solid ${color}55`;
-  roleEl.textContent = currentUser.role.charAt(0).toUpperCase() + currentUser.role.slice(1);
-  const isAdmin = currentUser.role === 'admin';
-  const isSupOrAdmin = currentUser.role === 'supervisor' || currentUser.role === 'admin';
-  document.getElementById('admin-panel').style.display = isAdmin ? 'block' : 'none';
-  document.getElementById('export-panel').style.display = isSupOrAdmin ? 'block' : 'none';
-  if (isAdmin) loadUsers();
+  const records = getRecords();
+  document.getElementById('profile-stat').textContent = `${records.length} registros neste dispositivo`;
+  renderProfilesManage();
 }
 
-async function exportCSV() {
-  const btn = document.getElementById('export-btn');
-  btn.disabled = true;
-  btn.textContent = '⏳ Exportando...';
-  try {
-    const records = await sb('inventory?order=created_at.desc&select=*');
-    if (!records || records.length === 0) {
-      toast('Nenhum registro para exportar.', 'warning');
-      btn.disabled = false;
-      btn.textContent = '⬇️ Exportar CSV';
-      return;
+function exportCSV() {
+  const records = getRecords();
+  if (!records.length) return toast('Nenhum registro para exportar.', 'warning');
+
+  const headers = ['ID', 'Colaborador', 'Rua', 'SKU', 'Quantidade', 'Observações', 'Data/Hora', 'Editado Por', 'Editado Em'];
+  const rows = records.map(r => [
+    r.id, r.user_name, r.rua, r.sku,
+    r.quantidade, r.observacoes || '', fmtDate(r.created_at),
+    r.edited_by || '', r.edited_at ? fmtDate(r.edited_at) : ''
+  ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
+
+  const csv = [headers.join(','), ...rows].join('\n');
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const date = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = `kavak-inventario-${date}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast(`✓ ${records.length} registros exportados!`, 'success');
+
+  setTimeout(() => {
+    if (confirm(`Apagar os ${records.length} registros deste dispositivo agora que foram exportados?`)) {
+      saveRecords([]);
+      loadRecords();
+      toast('Registros apagados do dispositivo.', 'success');
     }
-
-    const headers = ['ID', 'Colaborador', 'User ID', 'Rua', 'SKU', 'Quantidade', 'Observações', 'Data/Hora', 'Editado Por', 'Editado Em'];
-    const rows = records.map(r => [
-      r.id, r.user_name, r.user_id, r.rua, r.sku,
-      r.quantidade, r.observacoes || '', fmtDate(r.created_at),
-      r.edited_by || '', r.edited_at ? fmtDate(r.edited_at) : ''
-    ].map(v => `"${String(v).replace(/"/g, '""')}"`).join(','));
-
-    const csv = [headers.join(','), ...rows].join('\n');
-    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    const date = new Date().toISOString().slice(0,10);
-    a.href = url;
-    a.download = `kavak-inventario-${date}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-    toast(`✓ ${records.length} registros exportados!`, 'success');
-  } catch(e) {
-    toast('Erro ao exportar.', 'error');
-  }
-  btn.disabled = false;
-  btn.textContent = '⬇️ Exportar CSV';
-}
-
-async function loadUsers() {
-  try {
-    const users = await sb('users?order=name.asc&select=*');
-    const list = document.getElementById('users-list');
-    list.innerHTML = (users || []).map(u => `
-      <div class="user-row">
-        <div class="user-mini-avatar" style="${u.id === currentUser.id ? '' : 'background:var(--surface)'}">${u.name[0].toUpperCase()}</div>
-        <div style="flex:1">
-          <div style="font-size:13px;font-weight:500">${u.name}</div>
-          <div style="font-size:11px;color:var(--text2)">@${u.username} · ${u.role}</div>
-        </div>
-        ${u.id !== currentUser.id ? `
-          <button class="status-btn ${u.active ? 'status-active' : 'status-inactive'}" onclick="toggleUser('${u.id}',${u.active},'${u.name}')" style="margin-right:6px">${u.active ? 'Ativo' : 'Inativo'}</button>
-          <button onclick="deleteUser('${u.id}','${u.name}')" style="background:rgba(255,59,48,0.12);border:none;border-radius:8px;padding:4px 8px;color:var(--error);cursor:pointer;font-size:14px">🗑️</button>
-        ` : ''}
-      </div>
-    `).join('');
-  } catch(e) {}
-}
-
-async function deleteUser(id, name) {
-  if (!confirm(`Apagar a conta de "${name}" permanentemente? Esta ação não pode ser desfeita.`)) return;
-  try {
-    await sb(`users?id=eq.${id}`, { method: 'DELETE', prefer: 'return=minimal' });
-    toast('Conta apagada!', 'success');
-    loadUsers();
-  } catch(e) { toast('Erro ao apagar conta.', 'error'); }
-}
-
-async function toggleUser(id, isActive, name) {
-  const action = isActive ? 'desativar' : 'ativar';
-  if (!confirm(`${action.charAt(0).toUpperCase() + action.slice(1)} ${name}?`)) return;
-  try {
-    await sb(`users?id=eq.${id}`, { method: 'PATCH', prefer: 'return=minimal', body: JSON.stringify({ active: !isActive }) });
-    loadUsers();
-  } catch(e) { toast('Erro ao atualizar usuário.', 'error'); }
-}
-
-function openCreateUser() {
-  document.getElementById('cu-name').value = '';
-  document.getElementById('cu-user').value = '';
-  document.getElementById('cu-pass').value = '';
-  createUserRole = 'colaborador';
-  document.querySelectorAll('.role-chip').forEach(c => c.classList.toggle('active', c.dataset.role === 'colaborador'));
-  document.getElementById('create-user-modal').classList.add('active');
-}
-
-function closeCreateUser() {
-  document.getElementById('create-user-modal').classList.remove('active');
-}
-
-function selectRole(el) {
-  document.querySelectorAll('.role-chip').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  createUserRole = el.dataset.role;
-}
-
-async function createUser() {
-  const name = document.getElementById('cu-name').value.trim();
-  const username = document.getElementById('cu-user').value.trim();
-  const pass = document.getElementById('cu-pass').value;
-  if (!name || !username || pass.length < 6) return toast('Preencha todos os campos. Senha mínimo 6 caracteres.', 'error');
-  try {
-    const existing = await sb(`users?username=eq.${encodeURIComponent(username.toLowerCase())}&select=id`);
-    if (existing && existing.length > 0) return toast('Usuário já existe', 'error');
-    await sb('users', { method: 'POST', prefer: 'return=minimal', body: JSON.stringify({ id: uuid(), name, username: username.toLowerCase(), hash: hash(pass), role: createUserRole, active: true }) });
-    closeCreateUser();
-    loadUsers();
-    toast('Usuário criado!', 'success');
-  } catch(e) { toast('Erro ao criar usuário.', 'error'); }
+  }, 700);
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -1492,7 +1289,6 @@ function scanFrame() {
   const vw = video.videoWidth;
   const vh = video.videoHeight;
 
-  // Crop dynamically based on selected scan size
   const cropSize = Math.min(vw, vh) * (window._scanCrop || 0.4);
   const cropX = (vw - cropSize) / 2;
   const cropY = (vh - cropSize) / 2;
@@ -1532,14 +1328,12 @@ function onScanned(value) {
   document.getElementById('scanner-overlay').classList.remove('active');
 
   if (scanType === 'Rua') {
-    // Modo individual
     if (!validateRua(val)) { toast(`❌ Rua inválida: "${val}"`, 'error'); return; }
     formRua = val;
     setQrField('rua', val);
     toast(`Rua lida: ${val}`, 'success');
 
   } else if (scanType === 'Rua-PR') {
-    // Modo por rua — trava a rua
     if (!validateRua(val)) { toast(`❌ Rua inválida: "${val}"`, 'error'); return; }
     prRua = val;
     document.getElementById('pr-rua-val').textContent = val;
@@ -1549,7 +1343,6 @@ function onScanned(value) {
     toast(`Rua ${val} selecionada!`, 'success');
 
   } else if (scanType === 'SKU-PR') {
-    // Modo por rua — SKU atual
     if (!validateSku(val)) { toast(`❌ SKU inválido: "${val}"`, 'error'); return; }
     prSku = val;
     document.getElementById('pr-sku-val').textContent = val;
@@ -1558,7 +1351,6 @@ function onScanned(value) {
     toast(`SKU lido: ${val}`, 'success');
 
   } else {
-    // Modo individual — SKU
     if (!validateSku(val)) { toast(`❌ SKU inválido: "${val}"`, 'error'); return; }
     formSku = val;
     setQrField('sku', val);
@@ -1589,9 +1381,6 @@ function toast(msg, type = '') {
   toastTimeout = setTimeout(() => el.className = '', 3000);
 }
 
-// Sync btn hidden - not needed with Supabase
-document.getElementById('sync-btn').style.display = 'none';
-
 // ══════════════════════════════════════════════════════════════
 // TOGGLE SCAN SIZE
 // ══════════════════════════════════════════════════════════════
@@ -1621,11 +1410,8 @@ document.addEventListener('touchstart', e => {
 document.addEventListener('touchend', e => {
   const dx = e.changedTouches[0].clientX - touchStartX;
   const dy = e.changedTouches[0].clientY - touchStartY;
-  // Only horizontal swipes (dx > 60, dy < 80)
   if (Math.abs(dx) < 60 || Math.abs(dy) > 80) return;
-  // Ignore swipes inside scanner
   if (document.getElementById('scanner-overlay').classList.contains('active')) return;
-  // Ignore swipes inside modals
   if (document.querySelector('.modal-overlay.active')) return;
 
   const activeScreen = document.querySelector('.screen.active');
@@ -1639,9 +1425,8 @@ document.addEventListener('touchend', e => {
 }, { passive: true });
 
 // Enter key handlers
-document.getElementById('login-pass').addEventListener('keydown', e => e.key === 'Enter' && doLogin());
+document.getElementById('pin-input').addEventListener('keydown', e => e.key === 'Enter' && confirmPin());
 document.getElementById('manual-input').addEventListener('keydown', e => e.key === 'Enter' && submitManual());
-
 </script>
 
 <!-- jsQR library for QR code scanning -->
