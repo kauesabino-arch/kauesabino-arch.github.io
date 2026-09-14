@@ -228,7 +228,7 @@
     height: var(--scan-size, 160px);
     border: 2px solid var(--blue);
     border-radius: 12px;
-    transition: width 0.2s, height 0.2s;
+    transition: width 0.2s, height 0.2s, border-color 0.15s, box-shadow 0.15s;
   }
   .scanner-size-btn {
     position: absolute;
@@ -1250,6 +1250,7 @@ function exportCSV() {
 // ══════════════════════════════════════════════════════════════
 function openScanner(type) {
   scanType = type;
+  setFrameDetected(false);
   document.getElementById('scanner-label').textContent = `Ler QR Code — ${type}`;
   document.getElementById('scanner-overlay').classList.add('active');
   document.getElementById('manual-row').style.display = 'none';
@@ -1264,12 +1265,19 @@ function closeScanner() {
 
 async function startCamera() {
   try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: { ideal: 'environment' },
+        width: { ideal: 1920 },
+        height: { ideal: 1080 },
+        advanced: [{ focusMode: 'continuous' }]
+      }
+    });
     scannerStream = stream;
     const video = document.getElementById('scanner-video');
     video.srcObject = stream;
     video.play();
-    scannerInterval = setInterval(scanFrame, 300);
+    scannerInterval = setInterval(scanFrame, 120);
   } catch (e) {
     toast('Erro ao acessar a câmera. Use a entrada manual.', 'error');
     document.getElementById('manual-row').style.display = 'flex';
@@ -1281,31 +1289,79 @@ function stopCamera() {
   if (scannerStream) { scannerStream.getTracks().forEach(t => t.stop()); scannerStream = null; }
 }
 
+// Binariza a imagem com threshold adaptativo — melhora QR mal impresso / pouca luz
+function boostContrast(imageData) {
+  const d = imageData.data;
+  let sum = 0;
+  for (let i = 0; i < d.length; i += 4) sum += d[i]*0.299 + d[i+1]*0.587 + d[i+2]*0.114;
+  const avg = sum / (d.length / 4);
+  for (let i = 0; i < d.length; i += 4) {
+    const lum = d[i]*0.299 + d[i+1]*0.587 + d[i+2]*0.114;
+    const v = lum > avg ? 255 : 0;
+    d[i] = d[i+1] = d[i+2] = v;
+  }
+  return imageData;
+}
+
+// Feedback visual: quadrado fica verde quando localiza o QR
+function setFrameDetected(on) {
+  const frame = document.querySelector('.scanner-frame');
+  if (!frame) return;
+  frame.style.borderColor = on ? 'var(--success)' : 'var(--blue)';
+  frame.style.boxShadow = on ? '0 0 16px rgba(0,200,83,0.6)' : 'none';
+}
+
 function scanFrame() {
   const video = document.getElementById('scanner-video');
   if (video.readyState !== video.HAVE_ENOUGH_DATA) return;
-  const canvas = document.getElementById('scanner-canvas');
+  if (typeof jsQR === 'undefined') return;
 
-  const vw = video.videoWidth;
-  const vh = video.videoHeight;
+  const canvas = document.getElementById('scanner-canvas');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  const vw = video.videoWidth, vh = video.videoHeight;
+  if (!vw || !vh) return;
 
   const cropSize = Math.min(vw, vh) * (window._scanCrop || 0.4);
   const cropX = (vw - cropSize) / 2;
   const cropY = (vh - cropSize) / 2;
 
-  canvas.width = cropSize;
-  canvas.height = cropSize;
-
-  const ctx = canvas.getContext('2d');
-  ctx.drawImage(video, cropX, cropY, cropSize, cropSize, 0, 0, cropSize, cropSize);
+  // ── ESTRATEGIA 1: area central ampliada 2x ──
+  const scale = 2;
+  canvas.width = cropSize * scale;
+  canvas.height = cropSize * scale;
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(video, cropX, cropY, cropSize, cropSize, 0, 0, canvas.width, canvas.height);
 
   try {
-    const imageData = ctx.getImageData(0, 0, cropSize, cropSize);
-    if (typeof jsQR !== 'undefined') {
-      const code = jsQR(imageData.data, imageData.width, imageData.height);
-      if (code) onScanned(code.data);
+    let img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let code = jsQR(img.data, img.width, img.height, { inversionAttempts: 'attemptBoth' });
+    if (code && code.data) { setFrameDetected(true); onScanned(code.data); return; }
+    // 2a tentativa: com contraste binarizado
+    img = boostContrast(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    code = jsQR(img.data, img.width, img.height, { inversionAttempts: 'attemptBoth' });
+    if (code && code.data) { setFrameDetected(true); onScanned(code.data); return; }
+  } catch {}
+
+  // ── ESTRATEGIA 2: frame inteiro, mas so aceita QR dentro do quadrado ──
+  try {
+    canvas.width = vw;
+    canvas.height = vh;
+    ctx.drawImage(video, 0, 0, vw, vh);
+    const full = ctx.getImageData(0, 0, vw, vh);
+    const code = jsQR(full.data, vw, vh, { inversionAttempts: 'attemptBoth' });
+    if (code && code.data && code.location) {
+      const l = code.location;
+      const qrCx = (l.topLeftCorner.x + l.bottomRightCorner.x) / 2;
+      const qrCy = (l.topLeftCorner.y + l.bottomRightCorner.y) / 2;
+      const margin = cropSize * 0.65;
+      if (Math.abs(qrCx - vw/2) < margin && Math.abs(qrCy - vh/2) < margin) {
+        setFrameDetected(true); onScanned(code.data); return;
+      }
+      setFrameDetected(false); return; // QR visto, mas fora do quadrado
     }
   } catch {}
+
+  setFrameDetected(false);
 }
 
 // ══════════════════════════════════════════════════════════════
