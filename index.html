@@ -1277,7 +1277,7 @@ async function startCamera() {
     const video = document.getElementById('scanner-video');
     video.srcObject = stream;
     video.play();
-    scannerInterval = setInterval(scanFrame, 120);
+    scannerInterval = setInterval(scanFrame, 80);
   } catch (e) {
     toast('Erro ao acessar a câmera. Use a entrada manual.', 'error');
     document.getElementById('manual-row').style.display = 'flex';
